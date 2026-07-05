@@ -1,10 +1,11 @@
+import 'package:due_guard/core/theme/app_text_style.dart';
 import 'package:due_guard/features/on_boarding/presentaion/widget/on_boarding_badge.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/shared/widget/primary_button.dart';
+import '../../../core/theme/app_colors.dart';
 import 'on_boarding.dart';
 
-/// Content for a single onboarding slide. The background animation is
-/// shared/persistent across all slides — only this content swaps.
 class OnboardingSlideData {
   const OnboardingSlideData({
     required this.illustration,
@@ -12,9 +13,6 @@ class OnboardingSlideData {
     required this.description,
   });
 
-  /// The badge/icon illustration shown above the title (e.g. the
-  /// card-with-status-badges graphic in the reference screenshot).
-  /// Pass any widget — an Icon, an Image, a custom composed widget, etc.
   final Widget illustration;
   final String title;
   final String description;
@@ -28,8 +26,6 @@ class OnboardingScreen extends StatefulWidget {
   });
 
   final List<OnboardingSlideData> slides;
-
-  /// Called when the user taps Continue on the final slide, or taps Skip.
   final VoidCallback onFinished;
 
   @override
@@ -108,22 +104,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   Text(
                                     slide.title,
                                     textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                      color: Color(0xFFF5F5F5),
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.3,
-                                    ),
+                                    style: AppTextStyle.headerText
                                   ),
                                   const SizedBox(height: 12),
                                   Text(
                                     slide.description,
                                     textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                      color: Color(0xFFB8B8B8),
-                                      fontSize: 16,
-                                      height: 1.5,
-                                    ),
+                                    style: AppTextStyle.descriptionText
                                   ),
                                 ],
                               ),
@@ -149,38 +136,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         height: 5,
                         decoration: BoxDecoration(
                           color: isActive
-                              ? const Color(0xFFF5F5F5)
-                              : const Color(0xFFF5F5F5).withValues(alpha: 0.4),
+                              ? AppColors.textPrimary
+                              : AppColors.textPrimary.withValues(alpha: 0.4),
                           borderRadius: BorderRadius.circular(3),
                         ),
                       );
                     }),
                   ),
                 ),
-
-                // Continue button — label changes on the final slide.
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: 52,
-                    child: ElevatedButton(
-                      onPressed: _handleContinue,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF0A0A0A),
-                        foregroundColor: const Color(0xFFF5F5F5),
-                        side: const BorderSide(color: Color(0xFF2A2A2A)),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                      ),
-                      child: Text(
-                        _isLastPage ? 'Get started' : 'Continue',
-                        style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ),
-                ),
+                PrimaryButton(
+                    buttonLabel: _isLastPage ? 'Get started' : 'Continue',
+                    onPressed: _handleContinue
+                )
               ],
             ),
           ),
@@ -189,26 +156,3 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 }
-
-/// Example wiring — replace illustrations with your real badge/icon
-/// composition per slide.
-final exampleOnboardingSlides = [
-  OnboardingSlideData(
-    illustration: onboardingIllustrationSlide1,
-    title: 'Never miss\na payment again',
-    description:
-    'Keep all your manual bills, rent, and credit cards organized in one calm place without connecting a bank account.',
-  ),
-  OnboardingSlideData(
-    illustration: onboardingIllustrationSlide2,
-    title: 'Know exactly\nwhat you owe',
-    description:
-    'DueGuard calculates interest, minimum due, and late fees automatically — no guesswork.',
-  ),
-  OnboardingSlideData(
-    illustration: onboardingIllustrationSlide3,
-    title: 'Stay ahead,\nstress-free',
-    description:
-    'Gentle reminders before due dates, so nothing sneaks up on you.',
-  ),
-];

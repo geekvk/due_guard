@@ -1,12 +1,13 @@
-import 'package:due_guard/features/on_boarding/presentaion/home_screen.dart';
-import 'package:due_guard/features/on_boarding/presentaion/on_boarding.dart';
+import 'package:due_guard/core/app/app.dart';
 import 'package:due_guard/features/on_boarding/presentaion/widget/on_boarding_badge.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import 'core/routes/app_routes.dart';
 import 'features/on_boarding/presentaion/on_boarding_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
 class MyApp extends StatelessWidget {
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           ),
         ],
         onFinished: () {
-          // Navigate to the home screen or another screen after onboarding
+          context.goNamed(AppRoutes.home);
         },
       ),
     );
