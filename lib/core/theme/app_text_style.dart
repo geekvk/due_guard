@@ -140,4 +140,19 @@ abstract final class AppTextStyle {
     fontSize: 16,
     letterSpacing: 0.5,
   );
+
+  static const TextStyle footerTextStyle = TextStyle(
+    color: AppColors.textSecondary,
+    fontFamily: _fontFamilySans,
+    fontSize: 12,
+    letterSpacing: 0.5,
+    fontWeight: FontWeight.w600
+  );
+  static const TextStyle linkTextStyle = TextStyle(
+      color: AppColors.accent,
+      fontFamily: _fontFamilySans,
+      fontSize: 14,
+      letterSpacing: 0.5,
+      fontWeight: FontWeight.w600
+  );
 }
