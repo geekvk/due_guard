@@ -175,7 +175,7 @@ final onboardingIllustrationSlide2 = OnboardingIllustration(
 
 /// Slide 3 — "Stay ahead, stress-free": single SECURED badge.
 final onboardingIllustrationSlide3 = OnboardingIllustration(
-  centerIcon: Icons.shield_rounded,
+  centerIcon: Icons.verified_user,
   badges: [
     const OnboardingBadge(
       icon: Icons.circle,

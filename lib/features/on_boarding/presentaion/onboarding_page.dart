@@ -31,7 +31,7 @@ class OnboardingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingScreen(
       slides: _slides,
-      onFinished: () => context.go(AppRoutes.home),
+      onFinished: () => context.go(AppRoutes.login),
     );
   }
 }

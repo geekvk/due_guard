@@ -1,3 +1,5 @@
+import 'package:due_guard/features/auth/presentation/pages/login_page.dart';
+import 'package:due_guard/features/auth/presentation/pages/register_page.dart';
 import 'package:due_guard/features/home/presentation/pages/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +23,14 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.onboarding,
         builder: (context, state) => const OnboardingPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.login,
+        builder: (context, state) => const LoginPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.register,
+        builder: (context, state) => const RegisterPage(),
       ),
       GoRoute(
         path: AppRoutes.home,
