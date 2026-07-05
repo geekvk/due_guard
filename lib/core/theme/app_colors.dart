@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-class AppColors {
+abstract final class AppColors {
   AppColors._();
 
   // ---------------------------------------------------------------------
@@ -12,7 +12,7 @@ class AppColors {
 
   static const Color textPrimary = Color(0xFFF5F5F5);
   static const Color textSecondary = Color(0xFF8C8C8C);
-
+  static const Color descriptionText = Color(0xFFB8B8B8);
   // ---------------------------------------------------------------------
   // Brand accent — emerald (confirmed)
   // ---------------------------------------------------------------------

@@ -1,7 +1,8 @@
+import 'package:due_guard/core/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 
-/// A small floating pill badge with an icon + label, positioned around the
-/// central illustration (e.g. "PAID", "DUE SOON", "SECURED").
+import '../../../../core/theme/app_colors.dart';
+
 class OnboardingBadge {
   const OnboardingBadge({
     required this.icon,
@@ -16,14 +17,8 @@ class OnboardingBadge {
   final String label;
   final Color iconColor;
 
-  /// Where the badge sits relative to the illustration stack.
   final Alignment alignment;
-
-  /// Fine-tune the position beyond the base alignment.
   final Offset offset;
-
-  /// If true, the icon renders as a solid colored dot rather than an
-  /// outlined icon (matches the "SECURED" badge's plain dot in image 3).
   final bool filled;
 
   Widget build() {
@@ -48,12 +43,7 @@ class OnboardingBadge {
           const SizedBox(width: 6),
           Text(
             label,
-            style: const TextStyle(
-              color: Color(0xFFF5F5F5),
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 0.3,
-            ),
+            style: AppTextStyle.chipText
           ),
         ],
       ),
@@ -61,8 +51,6 @@ class OnboardingBadge {
   }
 }
 
-/// The layered "card stack with a center icon and floating badges"
-/// illustration used across the onboarding slides.
 class OnboardingIllustration extends StatelessWidget {
   const OnboardingIllustration({
     super.key,
@@ -150,14 +138,14 @@ final onboardingIllustrationSlide1 = OnboardingIllustration(
     const OnboardingBadge(
       icon: Icons.check_circle,
       label: 'PAID',
-      iconColor: Color(0xFF97C459),
+      iconColor: AppColors.paid,
       alignment: Alignment.topRight,
       offset: Offset(6, 6),
     ),
     const OnboardingBadge(
       icon: Icons.notifications,
       label: 'DUE SOON',
-      iconColor: Color(0xFFFAC775),
+      iconColor: AppColors.dueSoonText,
       alignment: Alignment.bottomLeft,
       offset: Offset(-6, -6),
     ),
@@ -171,14 +159,14 @@ final onboardingIllustrationSlide2 = OnboardingIllustration(
     const OnboardingBadge(
       icon: Icons.trending_up,
       label: 'INTEREST',
-      iconColor: Color(0xFFD6674F),
+      iconColor: AppColors.overdue,
       alignment: Alignment.topLeft,
       offset: Offset(-6, 6),
     ),
     const OnboardingBadge(
       icon: Icons.pie_chart,
       label: 'MIN DUE',
-      iconColor: Color(0xFFF5F5F5),
+      iconColor: AppColors.textPrimary,
       alignment: Alignment.bottomRight,
       offset: Offset(6, -6),
     ),
@@ -192,7 +180,7 @@ final onboardingIllustrationSlide3 = OnboardingIllustration(
     const OnboardingBadge(
       icon: Icons.circle,
       label: 'SECURED',
-      iconColor: Color(0xFF97C459),
+      iconColor: AppColors.paid,
       alignment: Alignment.topRight,
       offset: Offset(6, 6),
       filled: true,

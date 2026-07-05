@@ -1,5 +1,9 @@
+import 'package:due_guard/core/theme/app_dimensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../theme/app_colors.dart';
+import '../../theme/app_text_style.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String buttonLabel;
@@ -16,16 +20,16 @@ class PrimaryButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF0A0A0A),
-            foregroundColor: const Color(0xFFF5F5F5),
-            side: const BorderSide(color: Color(0xFF2A2A2A)),
+            backgroundColor: AppColors.background,
+            foregroundColor: AppColors.textPrimary,
+            side: const BorderSide(color: AppColors.border),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(AppDimensions.buttonBorderRadius),
             ),
           ),
           child: Text(
             buttonLabel,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            style: AppTextStyle.primaryButtonTextStyle,
           ),
         ),
       ),
