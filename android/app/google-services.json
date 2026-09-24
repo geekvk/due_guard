@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "498984965346",
+    "project_id": "dueguard-794c3",
+    "storage_bucket": "dueguard-794c3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498984965346:android:ab80365cc94edcabe9babb",
+        "android_client_info": {
+          "package_name": "com.example.due_guard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498984965346-m9s09jv1aclr60evo9bkes73imbvl1v0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.due_guard",
+            "certificate_hash": "f8c80978641a554743cec1dc24ab97570dd66485"
+          }
+        },
+        {
+          "client_id": "498984965346-jdeff9cnof021j0us72sjid6uvqqibvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPkHgueJOYKSSjvL4twZyUjD4wNCE2RlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498984965346-jdeff9cnof021j0us72sjid6uvqqibvj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "498984965346-g8jp459depa0iur379gtqdfa0qh83o1g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dueGuard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
